@@ -17,8 +17,12 @@ int main(void)
 {
 	putchar (48 + x);
 	putchar (48 + y);
+	if (x < 8)
+{
 	putchar (',');
 	putchar (' ');
+
+}
 }
 }
 }
