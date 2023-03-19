@@ -21,7 +21,7 @@ for (x = 0; x < 10; x++)
 	putchar (48 + x);
 	putchar (48 + y);
 	putchar (48 + z);
-	if (x > 7)
+	if (x < 7)
 {
 	putchar (',');
 	putchar (' ');
