@@ -6,35 +6,30 @@
 */
 int main(void)
 {
-	int x;
+	int x = 0;
 	int y;
-	int z;
-	int n;
 
-	for (x = 0; x < 10; x++)
+	while (x <= 99)
 {
-	for (y = 0; y < 10; y++)
+	y = x;
+	while (y <= 99)
 {
-	for (z = 0; z < 10; z++)
+	if (x != y)
 {
-	for (n = 0; n < 10; n++)
-{
-	if (x <= z)
-{
-	putchar (48 + x);
-	putchar (48 + y);
+	putchar ((x / 10) + 48);
+	putchar ((x % 10) + 48);
 	putchar (' ');
-	putchar (48 + z);
-	putchar (48 + n);
-	if (y < 8)
+	putchar ((y / 10) + 48);
+	putchar ((y % 10) + 48);
+	if (x != 98 || y != 99)
 {
 	putchar (',');
 	putchar (' ');
 }
 }
+y++;
 }
-}
-}
+x++;
 }
 	putchar ('\n');
 	return (0);
