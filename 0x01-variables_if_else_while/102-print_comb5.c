@@ -19,7 +19,7 @@ int main(void)
 {
 	for (n = 0; n < 10; n++)
 {
-	if (y < n && x <= z)
+	if (y <= n && x <= z   )
 {
 	putchar (48 + x);
 	putchar (48 + y);
