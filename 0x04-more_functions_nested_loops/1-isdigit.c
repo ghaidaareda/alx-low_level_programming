@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* _isgidit-write digits
+* _isdigit-write digits
 * Return: in digit 1, other 0
 * @c:digit
 */
