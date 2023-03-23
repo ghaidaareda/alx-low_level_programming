@@ -12,11 +12,11 @@
 {
 	int largest;
 
-	if (a > b && a > c && b > c)
+	if (a > b && a > c)
 {
 	largest = a;
 }
-	else if (b > a && b > c && a > c)
+	else if (b > c)
 {
 	largest = b;
 }
