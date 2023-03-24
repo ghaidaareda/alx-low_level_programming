@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-*print_diagonl-to print line
+*print_diagonal- print line
 *Return: void
 *@n:number of charater
 */
