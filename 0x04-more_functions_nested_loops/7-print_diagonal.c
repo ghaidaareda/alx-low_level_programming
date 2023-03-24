@@ -5,6 +5,7 @@
 *Return: void
 *@n:number of charater
 */
+
 void print_diagonal(int n)
 {
 	int row;
