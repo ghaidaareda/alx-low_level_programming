@@ -9,7 +9,7 @@
 	int lst;
 
 	lst = (n % 10);
-	for (n < 0)
+	if (n < 0)
 	{
 		n = (-1 * n);
 	}
