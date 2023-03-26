@@ -9,10 +9,10 @@
 	int lst;
 
 	lst = (n % 10);
-	if (n < 0)
+	if (lst < 0)
 	{
-		n = (-1 * n);
+		lst = (-1 * lst);
 	}
-	_putchar (n + 48);
+	_putchar (lst + 48);
 	return (0);
 }
