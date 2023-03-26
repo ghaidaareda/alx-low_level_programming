@@ -14,5 +14,5 @@
 		lst = (-1 * lst);
 	}
 	_putchar (lst + 48);
-	return (0);
+	return (lst);
 }
