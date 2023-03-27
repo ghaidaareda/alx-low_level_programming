@@ -2,7 +2,7 @@
 /**
  * _puts-print string
  * Return:void
- * @*str-string
+ * @str:string
  */
 void _puts(char *str)
 {
