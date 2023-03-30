@@ -2,33 +2,33 @@
 /**
  * cap_string-change to upper case
  * Return:char
- * @n:string
+ * @str:string
  */
-	char *cap_string(char *n)
+	char *cap_string(char *str)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0 ; n[i] != '\0'; i++)
-		if (n[i] >= 'a' && n[i] <= 'z')
-		{
-			n[i] = n[i] - 32;
-		}
-		else if (n[i - 1] == ' ' ||
-		n[i - 1] == '\t' ||
-		n[i - 1] == '\n' ||
-		n[i - 1] == ',' ||
-		n[i - 1] == ';' ||
-		n[i - 1] == '.' ||
-		n[i - 1] == '!' ||
-		n[i - 1] == '?' ||
-		n[i - 1] == '"' ||
-		n[i - 1] == '(' ||
-		n[i - 1] == ')' ||
-		n[i - 1] == '{' ||
-		n[i - 1] == '}' ||
+	while (str[i])
+	{
+		while (!(str[i] >= 'a' && str[i] <= 'z'))
+			i++;
+		if (str[i - 1] == ' ' ||
+		str[i - 1] == '\t' ||
+		str[i - 1] == '\n' ||
+		str[i - 1] == ',' ||
+		str[i - 1] == ';' ||
+		str[i - 1] == '.' ||
+		str[i - 1] == '!' ||
+		str[i - 1] == '?' ||
+		str[i - 1] == '"' ||
+		str[i - 1] == '(' ||
+		str[i - 1] == ')' ||
+		str[i - 1] == '{' ||
+		str[i - 1] == '}' ||
 		i == 0)
 		{
-		n[i] = n[i] - 32;
+		str[i] -= 32;
+		i++;
 		}
-	return (n);
+	return (str);
 }
