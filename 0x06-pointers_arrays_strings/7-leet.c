@@ -6,8 +6,8 @@
  */
 	char *leet(char *n)
 {
-	char x[10] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
-	char y[10] = {4, 4, 3, 3, 0, 0, 7, 7, 1, 1};
+	char x[10] = "aAeEoOtTlL";
+	char y[10] = "4433007711";
 	int i;
 
 	int j;
