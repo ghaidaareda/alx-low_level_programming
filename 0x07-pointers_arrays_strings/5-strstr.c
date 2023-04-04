@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stddef.h>
+#include <stdlib.h>
 /**
  *_strstr-function that locates a substring
  * Return:pointer to substring that matches, or NULL if not found
