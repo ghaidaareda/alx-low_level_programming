@@ -3,6 +3,8 @@
 /**
  * main-print file name
  * Return:0
+ * @argc:count
+ * @argv:vector
  */
 	int main(int argc, char *argv[])
 {
