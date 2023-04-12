@@ -10,10 +10,9 @@
 {
 	char *new;
 
-	new = malloc(strlen(str) + 1);
-
 	unsigned int i;
 
+	new = malloc(strlen(str) + 1);
 	if (str == NULL)
 	{
 		return (NULL);
