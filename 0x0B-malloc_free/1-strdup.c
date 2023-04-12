@@ -20,6 +20,6 @@
 	{
 		new[i] = str[i];
 	}
-	free(str);
 	return (new);
+	free(new);
 }
