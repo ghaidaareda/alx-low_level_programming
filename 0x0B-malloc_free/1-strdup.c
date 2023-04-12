@@ -12,11 +12,11 @@
 
 	unsigned int i;
 
-	new = malloc(strlen(str) + 1);
 	if (str == NULL)
 	{
 		return (NULL);
 	}
+	new = malloc(strlen(str) + 1);
 	if (str == NULL)
 	{
 	return (NULL);
