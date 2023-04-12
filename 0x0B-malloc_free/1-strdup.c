@@ -17,7 +17,7 @@
 		return (NULL);
 	}
 	new = malloc(strlen(str) + 1);
-	if (str == NULL)
+	if (new == NULL)
 	{
 	return (NULL);
 	}
