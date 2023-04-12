@@ -12,7 +12,7 @@
 
 	unsigned int i;
 
-	if (new == NULL || str == NULL)
+	if (new == NULL && str == NULL)
 	{
 		return (NULL);
 	}
