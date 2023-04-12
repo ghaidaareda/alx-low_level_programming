@@ -12,9 +12,13 @@
 
 	unsigned int i;
 
-	if (new == NULL && str == NULL)
+	if (str == NULL)
 	{
 		return (NULL);
+	}
+	if (str == NULL)
+	{
+	return (NULL);
 	}
 	for (i = 0; i < strlen(str) + 1; i++)
 	{
