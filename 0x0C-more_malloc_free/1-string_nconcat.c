@@ -10,7 +10,13 @@
  */
 	char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *s3 = malloc(strlen(s1) + n + 1);
+	char *s3;
+
+	if (strlen(s2) >= n)
+	{
+		n = strlen(s2);
+	}
+	s3 = malloc(strlen(s1) + n + 1);
 
 	if (s1 == NULL)
 	{
@@ -23,10 +29,6 @@
 	if (s3 == 0)
 	{
 	return (NULL);
-	}
-	if (n >= strlen(s2) && n != '\0')
-	{
-		n = strlen(s2);
 	}
 	strcpy(s3, s1);
 	strncat(s3, s2, n);
