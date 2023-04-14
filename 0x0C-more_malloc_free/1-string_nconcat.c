@@ -12,7 +12,7 @@
 {
 	char *s3;
 
-	if (strlen(s2) >= n)
+	if (strlen(s2) <= n)
 	{
 		n = strlen(s2);
 	}
