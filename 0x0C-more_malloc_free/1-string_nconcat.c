@@ -26,7 +26,7 @@
 	}
 	if (n >= strlen(s2))
 	{
-		n = strlen(s2);
+		n = strlen(s2) - 1;
 	}
 	strcpy(s3, s1);
 	strncat(s3, s2, n);
