@@ -24,9 +24,9 @@
 	{
 	return (NULL);
 	}
-	if (n >= strlen(s2))
+	if (n >= strlen(s2) && n != '\0')
 	{
-		n = strlen(s2) - 1;
+		n = strlen(s2);
 	}
 	strcpy(s3, s1);
 	strncat(s3, s2, n);
