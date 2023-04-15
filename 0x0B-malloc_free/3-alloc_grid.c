@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 /**
  * alloc_grid-function that returns a pointer to a 2D array of integers
  * Return:Null or 2D
@@ -10,7 +11,7 @@
 {
 	int **grid;
 
-	int i, j;
+	int i, *arr;
 
 	if (width <= 0 || height <= 0)
 	{
@@ -21,25 +22,17 @@
 	{
 		return (NULL);
 	}
-	for (i = 0; i < width; i++)
+	arr = malloc(width * height * sizeof(int));
+	if (arr == NULL)
 	{
-	grid[i] = malloc(height * sizeof(int));
-	if (grid[i] == NULL)
-	{
-		for (j = 0; j < i ; j++)
-		{
-			free(grid[j]);
-		}
 		free(grid);
 		return (NULL);
 	}
-	}
 	for (i = 0; i < width; i++)
-		{
-		for (j = 0; j < height; j++)
-		{
-			grid[i][j] = 0;
-		}
-		}
+	{
+		grid[i] = &arr[i * height];
+	}
+	memset(arr, 0, width * height * sizeof(int));
 	return (grid);
 }
+
