@@ -11,28 +11,33 @@
 {
 	int **grid;
 
-	int i, *arr;
+	int i, j;
 
 	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
 	}
-	grid = malloc(width * sizeof(int *));
+	grid = malloc(height * sizeof(int *));
 	if (grid == NULL)
 	{
 		return (NULL);
 	}
-	arr = malloc(width * height * sizeof(int));
-	if (arr == NULL)
+	for (i = 0; i < height; i++)
 	{
+	grid[i] = malloc(width * sizeof(int));
+	if (grid[i] == NULL)
+	{
+		for (j = 0; j < i; j++)
+		{
 		free(grid);
 		return (NULL);
+		}
 	}
-	for (i = 0; i < width; i++)
+	}
+	for (i = 0; i < height; i++)
 	{
-		grid[i] = &arr[i * height];
+		for (j = 0; j < width; j++)
+		grid[i][j] = 0;
 	}
-	memset(arr, 0, width * height * sizeof(int));
 	return (grid);
 }
-
