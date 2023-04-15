@@ -23,7 +23,7 @@
 		{
 			return (NULL);
 		}
-	strcpy(s3, s1);
+	memcpy(s3, s1,sizeof(*s1));
 	strcat(s3, s2);
 	return (s3);
 }
