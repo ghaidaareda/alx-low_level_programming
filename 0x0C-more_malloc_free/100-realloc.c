@@ -12,31 +12,37 @@
 {
 	void *new_ptr;
 
-	if (ptr == NULL)
-		{
-			return (NULL);
-		}
-	new_ptr = malloc(new_size);
-		if (new_ptr == NULL)
-		{
-			return (NULL);
-		}
-	memcpy(new_ptr, ptr, old_size);
-	if (new_size < old_size)
+	if (new_size == 0 && ptr != NULL)
 	{
-		memset(new_ptr, 0, new_size);
+		free(ptr);
+		return (NULL);
+	}
+	if (ptr == NULL)
+	{
+		new_ptr = malloc(new_size);
+		if (new_ptr == NULL)
+			{
+			return (NULL);
+			}
 	}
 	else if (new_size == old_size)
 	{
 		return (ptr);
 	}
-	else if (new_size == 0 && ptr != NULL)
+	else
 	{
-		return (NULL);
-	free (ptr);
+		new_ptr = malloc(new_size);
+			if (new_ptr == NULL)
+			{
+			return (NULL);
+			}
+	memcpy(new_ptr, ptr, old_size < new_size ? old_size : new_size);
+	if (new_size < old_size)
+	{
+		memset((char*)new_ptr + new_size, 0, old_size - new_size);
 	}
-	return(new_ptr);
 		free(ptr);
-	free(new_ptr);
+	}
+		return (new_ptr);
 }
 
