@@ -39,7 +39,7 @@
 	memcpy(new_ptr, ptr, old_size < new_size ? old_size : new_size);
 	if (new_size < old_size)
 	{
-		memset((char*)new_ptr + new_size, 0, old_size - new_size);
+		memset((char *)new_ptr + new_size, 0, old_size - new_size);
 	}
 		free(ptr);
 	}
