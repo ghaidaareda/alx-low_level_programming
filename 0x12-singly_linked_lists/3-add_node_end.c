@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * add_node_end-function adds a new node at beginning of a list_t list
+ * add_node_end-function adds a new node at end of a list_t list
  * @head:head of old node
  * @str:data to be dublicatd
  * Return:address to new element
