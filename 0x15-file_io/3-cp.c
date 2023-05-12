@@ -49,17 +49,23 @@ int main(int argc, char *argv[])
 	}
 	}
 	while ((numread = read(file_from, buf, BUF_SIZE)) > 0)
-		if (write(file_to, buf, numread) != numread || numread == -1)
+	{
+		if (write(file_to, buf, numread) != numread)
 	{
 		error(99, "Error: Can't write to %s\n", argv[2]);
 	}
+		else if (numread == -1)
+	{
+		error(99, "Error: Can't read to %s\n", argv[2]);
+	}
+	}
 	if (close(file_from) == -1)
 	{
-		error(100, "Error: Can't close fd %s\n", argv[1]);
+		error(100, "Error: Can't close fd %d\n", argv[1]);
 	}
 	if (close(file_to) == -1)
 	{
-		error(100, "Error: Can't close fd %s\n", argv[2]);
+		error(100, "Error: Can't close fd %d\n", argv[2]);
 	}
 	return (0);
 }
