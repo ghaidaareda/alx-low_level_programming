@@ -60,8 +60,8 @@ int main(int argc, char *argv[])
 	}
 	while ((numread = read(file_from, buf, BUF_SIZE)) > 0)
 	{
-		if (write(file_to, buf, numread) != numread ||
-write(file_to, buf, numread) == -1)
+		write(file_to, buf, numread);
+		if (write(file_to, buf, numread) == -1)
 	{
 		error(99, "Error: Can't write to %s\n", argv[2]);
 	}
