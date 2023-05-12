@@ -65,10 +65,10 @@ int main(int argc, char *argv[])
 	{
 		error(99, "Error: Can't write to %s\n", argv[2]);
 	}
-	}
 		if (numread == -1)
 	{
 		error(98, "Error: Can't read from file %s\n", argv[2]);
+	}
 	}
 	close_file(file_from);
 	close_file(file_to);
