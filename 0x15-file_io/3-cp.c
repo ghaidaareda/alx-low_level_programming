@@ -18,6 +18,21 @@ void error(int code, const char *format, const char *arg)
 	dprintf(STDERR_FILENO, format, arg), exit(code);
 }
 /**
+ * close_file- Closes file.
+ * @fd: fd
+ * Return: void
+ */
+void close_file(int fd)
+{
+	int x = close(fd);
+
+	if (x == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", x);
+		exit(100);
+	}
+}
+/**
  * main-function copy from file to another
  * Return:0 or error msg
  * @argc:argument count
@@ -48,21 +63,17 @@ int main(int argc, char *argv[])
 	}
 	}
 	while ((numread = read(file_from, buf, BUF_SIZE)) > 0)
+	{
 		if (write(file_to, buf, numread) != numread)
 	{
 		error(99, "Error: Can't write to %s\n", argv[2]);
+	}
 	}
 		if (numread == -1)
 	{
 		error(98, "Error: Can't read from file %s\n", argv[2]);
 	}
-	if (close(file_from) == -1)
-	{
-		error(100, "Error: Can't close fd %d\n", argv[1]);
-	}
-	if (close(file_to) == -1)
-	{
-		error(100, "Error: Can't close fd %d\n", argv[2]);
-	}
+	close_file(file_from);
+	close_file(file_to);
 	return (0);
 }
