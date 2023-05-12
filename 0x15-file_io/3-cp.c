@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 		error(98, "Error: Can't read from file %s\n", argv[1]);
 	}
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (file_to == -1 || fchmod(file_to, 0664) == -1)
+	if (file_to == -1)
 	{
 		error(99, "Error: Can't write to %s\n", argv[2]);
 	}
