@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 	}
 		if (numread == -1)
 		{
-		error(98, "Error: Can't read from file %s\n", argv[2]);
+		error(98, "Error: Can't read from file %s\n", argv[1]);
 		}
 	close_file(file_from);
 	close_file(file_to);
