@@ -13,10 +13,10 @@
  * @arg:argument
  * Return:void
  */
-void error(int code, cost char *format, const char *arg)
+void error(int code, const char *format, const char *arg)
 {
 	dprintf(STDERR_FILENO, format, arg);
-	exti(code);
+	exit(code);
 }
 /**
  * main-function copy from file to another
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		error(97, "Usage: %s file_from file_to\n", argv[0])
+		error(97, "Usage: %s file_from file_to\n", argv[0]);
 	}
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
