@@ -60,18 +60,15 @@ int main(int argc, char *argv[])
 	}
 	while ((numread = read(file_from, buf, BUF_SIZE)) > 0)
 	{
-		if (write(file_to, buf, numread) != numread)
+		write(file_to, buf, numread);
+		if (write(file_to, buf, numread) == -1)
 		{
 		error(99, "Error: Can't write to %s\n", argv[2]);
 		}
-		else if (write(file_to, buf, numread) == -1)
+		else if (numread == -1)
 		{
-		error(99, "Error: Can't write to %s\n", argv[2]);
-		}
-	}
-		if (numread == -1)
-	{
 		error(98, "Error: Can't read from file %s\n", argv[2]);
+		}
 	}
 	close_file(file_from);
 	close_file(file_to);
