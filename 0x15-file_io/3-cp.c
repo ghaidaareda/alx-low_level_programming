@@ -29,11 +29,15 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
+	file_to = open(argv[2], O_WRONLY);
+	if (file_to == -1)
+	{	
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file_to == -1 || fchmod(file_to, 0664) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
+	}
 	}
 	while ((numread = read(file_from, buf, BUF_SIZE)) > 0)
 		if (write(file_to, buf, numread) != numread || numread == -1)
