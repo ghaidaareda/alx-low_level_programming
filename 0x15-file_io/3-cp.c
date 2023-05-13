@@ -46,7 +46,8 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		error(97, "Usage: cp %s %s/n", argv[1], argv[2]) ;
+		dprintf(STDERR_FILENO, "Usage: cp %s %s\n", argv[1], argv[2]);
+		exit(97);
 	}
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
