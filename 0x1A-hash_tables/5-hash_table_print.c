@@ -12,6 +12,10 @@ void hash_table_print(const hash_table_t *ht)
 	int pair = 0;
 	hash_node_t *node;
 
+	if (ht == NULL || ht->array == NULL)
+		return;
+	else
+	{
 	if (ht != NULL)
 	{
 		for (index = 0; index < ht->size; index++)
@@ -39,5 +43,6 @@ void hash_table_print(const hash_table_t *ht)
 		{
 			printf("{}\n");
 		}
+	}
 	}
 }
