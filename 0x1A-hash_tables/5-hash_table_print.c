@@ -13,28 +13,26 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *node;
 
 	if (ht == NULL || ht->array == NULL)
+	{
 		return;
-	else
+	}
+	for (index = 0; index < ht->size; index++)
 	{
-	if (ht != NULL)
-	{
-		for (index = 0; index < ht->size; index++)
+		node = ht->array[index];
+		while (node)
 		{
-			node = ht->array[index];
-			if (node)
+			if (pair == 0)
 			{
-				if (pair == 0)
-				{
-					printf("{'%s': '%s'", node->key, node->value);
-				}
-				else
-				{
-					printf(", '%s': '%s'", node->key, node->value);
-				}
-			node = node->next;
-			pair++;
+				printf("{'%s': '%s'", node->key, node->value);
 			}
+			else
+			{
+				printf(", '%s': '%s'", node->key, node->value);
+			}
+		node = node->next;
+		pair = 1;
 		}
+	}
 		if (pair)
 		{
 			printf("}\n");
@@ -43,6 +41,4 @@ void hash_table_print(const hash_table_t *ht)
 		{
 			printf("{}\n");
 		}
-	}
-	}
 }
