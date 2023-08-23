@@ -4,8 +4,8 @@ OBJ = .o
 NAME = school
 
 all: ${NAME}
-school: main${OBJ} school${OBJ}
-	${CC} main${OBJ} school${OBJ} -o school
+school: *${OBJ}
+	${CC} *${OBJ} -o school
 main.o: main${SRC}
 	${CC} -c main${SRC}
 school.o: school${SRC}
