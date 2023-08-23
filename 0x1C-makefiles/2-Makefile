@@ -1,12 +1,10 @@
 CC = gcc
-SRC = .c
-OBJ = .o
+SRC = *.c
+OBJ = *.o
 NAME = school
 
 all: ${NAME}
-school: *${OBJ}
-	${CC} *${OBJ} -o ${NAME} 
-main.o: main${SRC}
-	${CC} -c main${SRC}
-school.o: school${SRC}
-	${CC} -c ${NAME}${RSC}
+${NAME}: ${OBJ}
+	${CC} ${OBJ} -o ${NAME}
+%.o:  %.c
+	${CC} -c $< -o $@
