@@ -5,8 +5,8 @@ NAME = school
 
 all: ${NAME}
 school: *${OBJ}
-	${CC} *${OBJ} -o school
+	${CC} *${OBJ} -o ${NAME} 
 main.o: main${SRC}
 	${CC} -c main${SRC}
 school.o: school${SRC}
-	${CC} -c school${RSC}
+	${CC} -c ${NAME}${RSC}
